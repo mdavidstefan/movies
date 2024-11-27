@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.active {
+    color: black !important;
+}
+
+.inactive {
+    color: white !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mainContent {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.carousel_container {
+    display: flex;
+    flex-direction: column;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.carousel-img {
+    max-width: 100px;
+    box-shadow: 0 0 5px gray;
+}
