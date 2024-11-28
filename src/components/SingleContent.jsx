@@ -13,7 +13,7 @@ export const SingleContent = ({ id, poster_path, title, name, release_date, firs
 
     return (
         <>
-            <Card sx={{ maxWidth: 250 }}>
+            <Card sx={{ maxWidth: 250, backgroundColor:'#e0f2f1' }}>
                 <CardActionArea onClick={() => setOpen(true)}>
                     <CardMedia
                         sx={{ height: 400, minWidth: 250 }}
@@ -27,7 +27,7 @@ export const SingleContent = ({ id, poster_path, title, name, release_date, firs
                         <Typography variant="body2" sx={{ color: 'text.secondary', display: 'flex', justifyContent: 'space-between' }}>
                             <span>{media_type}</span> <span>{release_date || first_air_date}</span>
                         </Typography>
-                        <span style={{ position: 'absolute', top: 0, right: 0, color: 'white', border: '1px solid white', borderRadius: '50%', padding: '2px' }}>{vote_average.toFixed(2)}</span>
+                        <span style={{ position: 'absolute', top: 0, right: 0, color: '#e0f2f1', border: '1px solid #e0f2f1', borderRadius: '50%', padding: '2px' }}>{vote_average.toFixed(2)}</span>
                     </CardContent>
                 </CardActionArea>
             </Card>

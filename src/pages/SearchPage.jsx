@@ -11,14 +11,14 @@ import IconButton from '@mui/material/IconButton';
 export const SearchPage = () => {
 
     const [searchText, setSearchText] = useState('');
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState('')  
     const [type, setType] = useState('movie');
-    const urlSearch = `https://api.themoviedb.org/3/search/${type}?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&query=${searchText}&page=1`;
+    let urlSearch = `https://api.themoviedb.org/3/search/${type}?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&query=${query}&page=1`;
 
+    urlSearch = searchText ? `https://api.themoviedb.org/3/search/${type}?query=${query}&page=1&api_key=${import.meta.env.VITE_API_KEY}`
+        : `https://api.themoviedb.org/3/${type}/popular?page=1&api_key=${import.meta.env.VITE_API_KEY}`;
     const search = () => {
-        setQuery()
-        urlSearch = searchText ? `https://api.themoviedb.org/3/search/${type}?query=${searchText}&page=1&api_key=${import.meta.env.VITE_API_KEY}`
-            : `https://api.themoviedb.org/3/${type}/popular?page=1&api_key=${import.meta.env.VITE_API_KEY}`;
+        setQuery(searchText)
     }
 
 
@@ -32,8 +32,8 @@ export const SearchPage = () => {
     return (
         <>
             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={() => setSearchText(event.target.value)} value={searchText} />
-                <IconButton aria-label="search" color="primary" onClick={search}>
+                <TextField id="outlined-basic" label="Outlined" variant="outlined" onChange={() => setSearchText(event.target.value)}  />
+                <IconButton aria-label="search" color="primary" onClick={search} >
                     <SearchIcon />
                 </IconButton>
             </div>

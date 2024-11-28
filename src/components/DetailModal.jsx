@@ -54,7 +54,7 @@ export const DetailModal = ({ open, setOpen, id, media_type }) => {
                     <img src={data.backdrop_path ? img_500 + data.backdrop_path : noPictureLandscape} alt={data?.title || data?.name} />
                     <Typography id="modal-modal-description" sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <span><b>{data?.title || data?.name}</b> <b>{data?.release_date || data?.first_air_date}</b></span>
-                        <span style={{ color: 'blue', fontStyle: 'italic' }}>{data.tagline}</span>
+                        <span style={{ color: '#004d40', fontStyle: 'italic' }}><b>{data.tagline}</b></span>
                         <span>{data?.overview}</span>
                     </Typography>
                     <Carousel id={id} media_type={media_type} />

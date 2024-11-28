@@ -32,7 +32,7 @@ export const Header = () => {
 
     return (
         <>
-            <AppBar position="static" sx={{ backgroundColor: '#004d40', fontFamily:'Open'}}>
+            <AppBar position="static" sx={{ backgroundColor: '#00695c' }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <MovieIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -67,7 +67,7 @@ export const Header = () => {
                                 {pages.map((item) => (
                                     <NavLink key={item.name} to={item.path}>
                                         <MenuItem key={item.name} onClick={handleCloseNavMenu}>
-                                            <Typography sx={{ textAlign: 'center' }}>{item.name}</Typography>
+                                            <Typography sx={{ textAlign: 'center', color:'#004d40' }}>{item.name}</Typography>
                                         </MenuItem>
                                     </NavLink>
                                 ))}
