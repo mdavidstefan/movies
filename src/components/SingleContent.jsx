@@ -16,7 +16,7 @@ export const SingleContent = ({ id, poster_path, title, name, release_date, firs
             <Card sx={{ maxWidth: 250 }}>
                 <CardActionArea onClick={() => setOpen(true)}>
                     <CardMedia
-                        sx={{ height: 400 }}
+                        sx={{ height: 400, minWidth: 250 }}
                         image={poster_path ? img_300 + poster_path : imgUnavailable}
                         title={title || name}
                     />

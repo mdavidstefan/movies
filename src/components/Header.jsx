@@ -12,7 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { Outlet, NavLink } from 'react-router-dom';
 import MovieIcon from '@mui/icons-material/Movie';
 
-
 const pages = [
     { path: '/', name: 'Trendings' },
     { path: '/movies', name: 'Movies' },
@@ -33,7 +32,7 @@ export const Header = () => {
 
     return (
         <>
-            <AppBar position="static">
+            <AppBar position="static" sx={{ backgroundColor: '#004d40', fontFamily:'Open'}}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
                         <MovieIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

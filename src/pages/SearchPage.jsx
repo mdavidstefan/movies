@@ -11,10 +11,12 @@ import IconButton from '@mui/material/IconButton';
 export const SearchPage = () => {
 
     const [searchText, setSearchText] = useState('');
+    const [query, setQuery] = useState('')
     const [type, setType] = useState('movie');
     const urlSearch = `https://api.themoviedb.org/3/search/${type}?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&query=${searchText}&page=1`;
 
     const search = () => {
+        setQuery()
         urlSearch = searchText ? `https://api.themoviedb.org/3/search/${type}?query=${searchText}&page=1&api_key=${import.meta.env.VITE_API_KEY}`
             : `https://api.themoviedb.org/3/${type}/popular?page=1&api_key=${import.meta.env.VITE_API_KEY}`;
     }
@@ -41,7 +43,7 @@ export const SearchPage = () => {
                 <Button variant="text" onClick={() => setType('tv')}>Search TV shows</Button>
             </div>
             <div>
-                <Content url={urlSearch } type={type} />
+                <Content url={urlSearch} type={type} />
             </div>
         </>
     )
