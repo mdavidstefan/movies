@@ -9,6 +9,8 @@ import { noPictureLandscape } from '../utils';
 import { img_500 } from '../utils';
 import { Carousel } from './Carousel';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import { ThemeProvider } from 'styled-components';
+import { THEME } from '../App';
 
 const style = {
     position: 'absolute',
@@ -44,35 +46,38 @@ export const DetailModal = ({ open, setOpen, id, media_type }) => {
 
     return (
         <div>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box sx={style}>
-                    <img src={data.backdrop_path ? img_500 + data.backdrop_path : noPictureLandscape} alt={data?.title || data?.name} />
-                    <Typography id="modal-modal-description" sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <span><b>{data?.title || data?.name}</b> <b>{data?.release_date || data?.first_air_date}</b></span>
-                        <span style={{ color: '#004d40', fontStyle: 'italic' }}><b>{data.tagline}</b></span>
-                        <span>{data?.overview}</span>
-                    </Typography>
-                    <Carousel id={id} media_type={media_type} />
-                    {dataVideos?.results && dataVideos?.results.length > 0 &&
-                        <div>
-                            <Button
-                                className='video'
-                                variant='contained'
-                                startIcon={<YouTubeIcon />}
-                                target='_blank'
-                                href={`https://www.youtube.com/watch?v=${dataVideos?.results[0].key}`}
-                            >
-                                Watch the trailer
-                            </Button>
-                        </div>
-                    }
-                </Box>
-            </Modal>
+            <ThemeProvider theme={THEME}>
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                >
+                    <Box sx={style}>
+                        <img src={data.backdrop_path ? img_500 + data.backdrop_path : noPictureLandscape} alt={data?.title || data?.name} />
+                        <Typography id="modal-modal-description" sx={{ mt: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <span><b>{data?.title || data?.name}</b> <b>{data?.release_date || data?.first_air_date}</b></span>
+                            <span style={{ color: '#004d40', fontStyle: 'italic' }}><b>{data.tagline}</b></span>
+                            <span>{data?.overview}</span>
+                        </Typography>
+                        <Carousel id={id} media_type={media_type} />
+                        {dataVideos?.results && dataVideos?.results.length > 0 &&
+                            <div>
+                                <Button
+                                    className='video'
+                                    variant='contained'
+                                    startIcon={<YouTubeIcon />}
+                                    target='_blank'
+                                    href={`https://www.youtube.com/watch?v=${dataVideos?.results[0].key}`}
+                                    sx={{ backgroundColor: '#004d40'}}
+                                >
+                                    Watch the trailer
+                                </Button>
+                            </div>
+                        }
+                    </Box>
+                </Modal>
+            </ThemeProvider>
         </div>
     );
 }

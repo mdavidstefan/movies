@@ -11,7 +11,7 @@ export const Movies = () => {
     return (
         <div>
             <Genres type='movie' setUrlForGenres={setUrlForGenres} />
-            <Content url={urlMovies + '&with_genres=' + urlForGenres} type='movie'/>
+            <Content url={urlMovies + '&with_genres=' + urlForGenres} type='movie' />
         </div>
     )
 }

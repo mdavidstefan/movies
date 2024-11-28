@@ -5,6 +5,7 @@ import { CircularProgress } from '@mui/material'
 import { SingleContent } from './SingleContent'
 import { useState } from 'react'
 import { ContentPagination } from './ContentPagination'
+import { ThemeProvider } from 'styled-components'
 
 export const Content = ({ url, type }) => {
     const [page, setPage] = useState(1)

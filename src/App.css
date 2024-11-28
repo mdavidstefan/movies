@@ -29,9 +29,15 @@ a {
     flex-direction: column;
     object-fit: contain;
     padding: 10px;
+    gap: 5px;
 }
 
 .carousel-img {
     max-width: 100px;
     box-shadow: 0 0 5px gray;
+}
+
+.rootDiv {
+    background-color: #80cbc4;
+    min-height: 100vh;
 }

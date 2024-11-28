@@ -13,7 +13,7 @@ export const SingleContent = ({ id, poster_path, title, name, release_date, firs
 
     return (
         <>
-            <Card sx={{ maxWidth: 250, backgroundColor:'#e0f2f1' }}>
+            <Card sx={{ maxWidth: 250, backgroundColor: '#eeeeee' }}>
                 <CardActionArea onClick={() => setOpen(true)}>
                     <CardMedia
                         sx={{ height: 400, minWidth: 250 }}

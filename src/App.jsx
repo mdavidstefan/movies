@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createTheme, ThemeProvider } from '@mui/material';
 import './App.css'
 import { Trendings } from './pages/Trendings'
 import { Movies } from './pages/Movies'
@@ -34,8 +35,22 @@ const router = createBrowserRouter([
     }
   })
 
+export const THEME = createTheme({
+  typography: {
+    "fontFamily": `"Open Sans", sans-serif`,
+    "fontWeightLight": 300,
+    "fontWeightRegular": 400,
+    "fontWeightMedium": 500
+  }
+});
+
 function App() {
-  return <RouterProvider router={router} future={{ v7_startTransition: true }} />
+  return (
+    <ThemeProvider theme={THEME}>
+      <RouterProvider router={router} future={{ v7_startTransition: true }} />
+    </ThemeProvider>
+  )
+  
 }
 
 export default App

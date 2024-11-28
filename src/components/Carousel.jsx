@@ -4,6 +4,7 @@ import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 import { getData, noPicture, img_300 } from '../utils'
 import { CircularProgress } from '@mui/material'
+import { ThemeProvider } from 'styled-components'
 
 export const Carousel = ({ id, media_type }) => {
     const urlCredits = `https://api.themoviedb.org/3/${media_type}/${id}/credits?api_key=${import.meta.env.VITE_API_KEY}`;
